@@ -1,5 +1,7 @@
 # zoo-project
 Docker file for Zoo-Project on centos 6.7
+ZOO-Project is a WPS (Web Processing Service) open source project.
 
-The docker image can be find on:
+Links:
+http://zoo-project.org/
 https://hub.docker.com/r/yoms/zoo-project/
