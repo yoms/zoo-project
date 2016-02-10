@@ -17,3 +17,12 @@ RUN cd /tmp/zoo-project/zoo-project/zoo-kernel && make && make install
 RUN cp /tmp/zoo-project/zoo-project/zoo-kernel/main.cfg /usr/lib/cgi-bin
 ENV LD_LIBRARY_PATH=/usr/local/lib
 
+COPY zoo-project.conf /etc/ld.so.conf.d/zoo-project.conf
+RUN ldconfig
+RUN yum clean all
+RUN yum install -y mod_fcgid httpd
+
+COPY httpd.conf /etc/httpd/conf/httpd.conf
+EXPOSE 80
+
+CMD ["apachectl","-D","FOREGROUND"]
