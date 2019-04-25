@@ -1,10 +1,10 @@
-FROM centos:6.7
+FROM centos:6.8
 
 RUN yum clean all
 RUN yum update -y
 RUN yum install -y epel-release.noarch
 RUN yum update -y
-RUN yum install -y tar wget
+RUN yum install -y tar wget vim
 COPY elgis-release-6-6_0.noarch.rpm /tmp/elgis-release-6-6_0.noarch.rpm
 RUN rpm -Uvh /tmp/elgis-release-6-6_0.noarch.rpm
 COPY armadillo-3.800.2-1.el6.x86_64.rpm /tmp/armadillo-3.800.2-1.el6.x86_64.rpm
